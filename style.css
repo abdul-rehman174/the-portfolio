@@ -293,6 +293,23 @@ html.anim .fade-up.in { opacity: 1; transform: none; transition: opacity .9s var
   .project-card.featured { grid-column: auto; }
   .hero-title { letter-spacing: -2px; }
 }
+/* phones */
+@media (max-width: 560px) {
+  .section { padding: 64px 20px; }
+  .hero { padding: 110px 20px 72px; }
+  /* let the big title scale down so it never overflows tiny screens */
+  .hero-title { font-size: clamp(2.4rem, 14vw, 9.5rem); letter-spacing: -1px; }
+  .hero-stats { gap: 22px 30px; }
+  .section-head { margin-bottom: 44px; }
+  /* long email button: full width, centered, wraps instead of overflowing */
+  .btn.big { width: 100%; justify-content: center; text-align: center; padding: 18px 20px; font-size: .92rem; }
+  .btn.big span { overflow-wrap: anywhere; }
+  .project-card { padding: 26px; }
+  .terminal pre { padding: 18px; }
+  .terminal code { font-size: .8rem; }
+  .mobile-menu a { font-size: 1.9rem; }
+  .contact-socials { flex-wrap: wrap; justify-content: center; gap: 14px; }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .fade-up { opacity: 1; transform: none; }
