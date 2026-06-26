@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Content Security Policy: only allow the exact origins this site uses -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Abdul Rehman — Backend Developer</title>
+  <meta name="description" content="Abdul Rehman — Backend Developer specializing in Django, FastAPI, and scalable multi-tenant SaaS systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Animation gate: hide reveal elements only while JS is alive.
+    document.documentElement.classList.add('anim');
+    // Safety net — never let the page stay blank if a CDN/script fails.
+    setTimeout(function () {
+      var l = document.querySelector('.loader');
+      if (l) l.classList.add('done');
+      if (!window.__booted) {                 // main script never ran → show everything
+        document.documentElement.classList.remove('anim');
+        document.querySelectorAll('.fade-up').forEach(function (e) { e.classList.add('in'); });
+      }
+    }, 2500);
+  </script>
+</head>
+<body>
+  <!-- Ambient background — full-page animated gradient mesh + subtle grid -->
+  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Progress bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-inner">
+      <div class="loader-text"><span>A</span><span>R</span></div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav-logo magnetic" data-cursor="link">
+      <span class="logo-mark">AR</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about" data-cursor="link">About</a>
+      <a href="#experience" data-cursor="link">Experience</a>
+      <a href="#projects" data-cursor="link">Projects</a>
+      <a href="#skills" data-cursor="link">Skills</a>
+      <a href="#contact" class="nav-cta magnetic" data-cursor="link">Let's talk</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-badge"><span class="dot"></span> Available for opportunities</div>
+        <h1 class="hero-title">
+          <span class="line" data-split>Backend</span>
+          <span class="line outline" data-split>Developer</span>
+        </h1>
+        <p class="hero-sub">
+          Hi, I'm <strong>Abdul Rehman</strong> — I build scalable, secure
+          <em>multi-tenant SaaS &amp; ERP systems</em> with Django, FastAPI &amp; Odoo.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary magnetic" data-cursor="link">
+            <span>View my work</span>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost magnetic" data-cursor="link"><span>Get in touch</span></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="num" data-count="2">0</span><span class="suffix">+</span><p>Years experience</p></div>
+          <div class="stat"><span class="num" data-count="5">0</span><span class="suffix">+</span><p>Production projects</p></div>
+          <div class="stat"><span class="num" data-count="3">0</span><span class="suffix">+</span><p>Retail deployments</p></div>
+        </div>
+      </div>
+      <div class="hero-scroll"><span>Scroll</span><div class="mouse"><span></span></div></div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Python</span><i>✦</i><span>Django</span><i>✦</i><span>FastAPI</span><i>✦</i><span>DRF</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>Docker</span><i>✦</i><span>Celery</span><i>✦</i><span>Redis</span><i>✦</i><span>Odoo</span><i>✦</i>
+        <span>Python</span><i>✦</i><span>Django</span><i>✦</i><span>FastAPI</span><i>✦</i><span>DRF</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>Docker</span><i>✦</i><span>Celery</span><i>✦</i><span>Redis</span><i>✦</i><span>Odoo</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="section-head">
+        <span class="eyebrow">01 — About</span>
+        <h2 class="section-title" data-split-lines>Engineering reliable backends that scale under pressure.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text fade-up">
+          <p>I'm a <strong>Backend Developer</strong> with <strong>2+ years</strong> of experience building multi-tenant SaaS and ERP platforms. I specialize in designing clean REST APIs, hardening authentication &amp; security, and keeping production systems healthy.</p>
+          <p>From AI-driven sales forecasting platforms to offline POS systems deployed across retail clients, I focus on code that's <em>reliable, observable, and maintainable</em> — backed by tools like Splunk &amp; New Relic.</p>
+          <div class="about-meta">
+            <div><span>Location</span><p>Bahawalpur, Pakistan</p></div>
+            <div><span>Focus</span><p>APIs · SaaS · Security</p></div>
+            <div><span>Education</span><p>B.S. Software Engineering, IUB</p></div>
+          </div>
+        </div>
+        <div class="about-card fade-up">
+          <div class="terminal">
+            <div class="term-bar"><span></span><span></span><span></span><b>abdul@dev ~ python</b></div>
+            <pre><code><span class="c-key">class</span> <span class="c-cls">AbdulRehman</span>(<span class="c-cls">BackendDeveloper</span>):
+    role        = <span class="c-str">"Backend Developer"</span>
+    location    = <span class="c-str">"Bahawalpur, PK"</span>
+    stack       = [<span class="c-str">"Django"</span>, <span class="c-str">"FastAPI"</span>, <span class="c-str">"Odoo"</span>]
+    databases   = [<span class="c-str">"PostgreSQL"</span>, <span class="c-str">"MySQL"</span>]
+    devops      = [<span class="c-str">"Docker"</span>, <span class="c-str">"Celery"</span>, <span class="c-str">"Redis"</span>]
+
+    <span class="c-key">def</span> <span class="c-fn">build</span>(self, idea):
+        <span class="c-key">return</span> ship(secure(scalable(idea)))</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section experience" id="experience">
+      <div class="section-head">
+        <span class="eyebrow">02 — Experience</span>
+        <h2 class="section-title" data-split-lines>Where I've made impact.</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item fade-up">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-top"><h3>Backend Developer</h3><span class="tl-date">Mar 2024 — Present</span></div>
+            <p class="tl-org">Enigmatix Software House · Bahawalpur</p>
+            <ul>
+              <li>Designed &amp; maintained RESTful APIs with DRF &amp; FastAPI for multi-tenant systems serving large enterprise customers.</li>
+              <li>Debugged live production issues via log analysis, shell-level investigation &amp; root-cause tracing.</li>
+              <li>Monitored system health using Splunk &amp; New Relic; integrated Okta / SSO-SAML auth flows.</li>
+              <li>Owned Jira tickets end-to-end — from debugging to deployment — in a distributed team.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-top"><h3>Backend Developer <span class="tl-tag">External</span></h3><span class="tl-date">Aug 2025 — Nov 2025</span></div>
+            <p class="tl-org">Systems Limited (via Enigmatix) · Remote</p>
+            <ul>
+              <li>Built the authentication &amp; security service for a School Board Management System.</li>
+              <li>Delivered FastAPI APIs for registration, login &amp; verification with validation, input sanitization &amp; abuse-prevention.</li>
+              <li>Recognized by the client team for code quality, reliability &amp; consistent delivery.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+      <div class="section-head">
+        <span class="eyebrow">03 — Selected Work</span>
+        <h2 class="section-title" data-split-lines>Projects I'm proud of.</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card featured fade-up" data-cursor="view">
+          <div class="pc-glow"></div>
+          <div class="pc-top"><span class="pc-index">01</span><span class="pc-link">aviso.com ↗</span></div>
+          <h3>Aviso — Sales Forecasting &amp; Revenue Intelligence</h3>
+          <p>Multi-tenant SaaS delivering AI-driven sales forecasting, deal pipelines, account analytics &amp; CRM intelligence for revenue teams.</p>
+          <ul class="pc-points">
+            <li>Built REST endpoints &amp; domain models across forecasting &amp; CRM workflows.</li>
+            <li>Optimized Celery background jobs for analytics, sync &amp; reporting.</li>
+            <li>Resolved API latency &amp; production issues with Splunk &amp; New Relic.</li>
+          </ul>
+          <div class="pc-tags"><span>Python</span><span>Django</span><span>PostgreSQL</span><span>Celery</span></div>
+        </article>
+
+        <article class="project-card fade-up" data-cursor="view">
+          <div class="pc-glow"></div>
+          <div class="pc-top"><span class="pc-index">02</span><span class="pc-link">Odoo</span></div>
+          <h3>Pharmacy POS</h3>
+          <p>Offline pharmacy POS for medical-store retail — deployed across 3+ clients.</p>
+          <ul class="pc-points">
+            <li>Pack-based inventory &amp; tax-inclusive pricing logic.</li>
+            <li>Keyboard navigation, fast product search &amp; thermal receipts.</li>
+          </ul>
+          <div class="pc-tags"><span>Odoo</span><span>Python</span><span>Docker</span></div>
+        </article>
+
+        <article class="project-card fade-up" data-cursor="view">
+          <div class="pc-glow"></div>
+          <div class="pc-top"><span class="pc-index">03</span><span class="pc-link">Odoo</span></div>
+          <h3>Restaurant POS</h3>
+          <p>Offline restaurant POS supporting multi-branch retail operations.</p>
+          <ul class="pc-points">
+            <li>Timezone-aware sales &amp; session reporting modules.</li>
+            <li>Offline license validation &amp; renewal workflows.</li>
+          </ul>
+          <div class="pc-tags"><span>Odoo</span><span>PostgreSQL</span><span>Docker</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+      <div class="section-head">
+        <span class="eyebrow">04 — Toolkit</span>
+        <h2 class="section-title" data-split-lines>Technologies I work with.</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group fade-up"><h4>Languages</h4><div class="chips"><span>Python</span><span>SQL</span></div></div>
+        <div class="skill-group fade-up"><h4>Backend</h4><div class="chips"><span>Django</span><span>DRF</span><span>FastAPI</span><span>Odoo</span></div></div>
+        <div class="skill-group fade-up"><h4>Databases</h4><div class="chips"><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span></div></div>
+        <div class="skill-group fade-up"><h4>DevOps</h4><div class="chips"><span>Docker</span><span>Celery</span><span>Redis</span></div></div>
+        <div class="skill-group fade-up"><h4>Auth &amp; Identity</h4><div class="chips"><span>SSO / SAML</span><span>Okta</span></div></div>
+        <div class="skill-group fade-up"><h4>Monitoring &amp; Tools</h4><div class="chips"><span>Splunk</span><span>New Relic</span><span>Git</span><span>Postman</span><span>Confluence</span></div></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="contact-inner">
+        <span class="eyebrow center">05 — Contact</span>
+        <h2 class="contact-title" data-split-lines>Let's build something great together.</h2>
+        <p class="contact-sub fade-up">Open to backend roles &amp; freelance projects. Drop me a line — I reply fast.</p>
+        <a href="mailto:abdulrehmanshafy101@gmail.com" class="btn btn-primary big fade-up" data-cursor="link"><span>abdulrehmanshafy101@gmail.com</span></a>
+        <div class="contact-socials fade-up">
+          <a href="https://github.com/abdul-rehman174" target="_blank" rel="noopener" data-cursor="link">GitHub ↗</a>
+          <a href="https://linkedin.com/in/abdul-rehman174" target="_blank" rel="noopener" data-cursor="link">LinkedIn ↗</a>
+          <a href="tel:+923090070149" data-cursor="link">+92 309 0070149 ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Abdul Rehman. Built with GSAP &amp; care.</p>
+    <a href="#hero" class="back-top magnetic" data-cursor="link">Back to top ↑</a>
+  </footer>
+
+  <!-- Libraries (defer = don't block page render; SRI = CDN can't be tampered with) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"
+    integrity="sha384-li4UtcFCH6QeUqR4JyV58/VgTprMuz9aauj+oWtew7V4Y7ZVjnvz5px9Y3UCG0Ea"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="script.js"></script>
+</body>
+</html>
